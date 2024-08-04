@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pandas Badge</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\1F4D5';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\1F4D6";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.code-block {
+  overflow-x: auto;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.copy-icon:hover {
+  color: #337ab7;
+}
+
+.heading-block {
+            background-color: #7777;
+            padding: 10px;
+            border: 1px solid #7777;
+            margin-bottom: 20px;
+        }
+</style>
+</head>
+<body>
+
+<div class="heading-block">
+    <center><h1>Leetcode</h1></center>
+</div>
+
+<h2><u>Introduction to Pandas</u></h2>
+
+<h4>Pandas Data Structures</h4>
+<button class="collapsible">2877. Create a DataFrame from List</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
+    return pd.DataFrame(student_data, columns=['student_id', 'age'])
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/create-a-dataframe-from-list/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<h4>Data Inspection</h4>
+<button class="collapsible">2878. Get the Size of a DataFrame</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def getDataframeSize(players: pd.DataFrame) -> List[int]:
+    return [*players.shape]
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/get-the-size-of-a-dataframe/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2879. Display the First Three Rows</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    return employees.head(3)
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/display-the-first-three-rows/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<h4>Data Selecting</h4>
+<button class="collapsible">2880. Select Data</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.loc[students['student_id'] == 101, ['name', 'age']]
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/select-data/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2881. Create a New Column</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['bonus'] = employees['salary'] * 2
+    return employees
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/create-a-new-column/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<h4>Data Cleaning</h4>
+<button class="collapsible">2882. Drop Duplicate Rows</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+    customers.drop_duplicates(subset='email', keep='first', inplace=True)
+    return customers
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/drop-duplicate-rows/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2883. Drop Missing Data</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+    students.dropna(subset=['name'], inplace=True)
+    return students
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/drop-missing-data/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2884. Modify Columns</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['salary'] = employees['salary'] * 2
+    return employees
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/modify-columns/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2885. Rename Columns</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
+    return students.rename(
+        columns={
+            "id": "student_id",
+            "first": "first_name",
+            "last": "last_name",
+            "age": "age_in_years",
+        }
+     )
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/rename-columns/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2886. Change Data Type</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+    return students.astype({'grade': int})
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/change-data-type/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2887. Fill Missing Data</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
+    products['quantity'].fillna(0, inplace=True)
+    return products
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/fill-missing-data/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<h4>Table Reshaping</h4>
+<button class="collapsible">2888. Reshape Data: Concatenate</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+    return pd.concat([df1, df2], axis=0)
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/reshape-data-concatenate/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2889. Reshape Data: Pivot</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def pivotTable(weather: pd.DataFrame) -> pd.DataFrame:
+    return weather.pivot_table(
+        index='month',
+        columns='city',
+        values='temperature',
+        aggfunc='max',
+   )
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/reshape-data-pivot/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<button class="collapsible">2890. Reshape Data: Melt</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def meltTable(report: pd.DataFrame) -> pd.DataFrame:
+    return pd.melt(
+        report,
+            id_vars=['product'],
+            var_name='quarter',
+            value_name='sales',
+      )
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/reshape-data-melt/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+<h4>Advanced Techniques</h4>
+<button class="collapsible">2891. Method Chaining</button>
+<div class="content">
+  <pre>
+    <div class="code-block">
+        <span class="copy-icon" title="Copy to clipboard">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </span>
+<code class="python">import pandas as pd
+
+def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
+    return animals[animals['weight'] > 100].sort_values(
+        by='weight',
+        ascending=False
+  )[['name']]
+      </code>
+    </div>
+    <a href="https://leetcode.com/problems/method-chaining/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata">Problem Link</a>
+  </pre>
+</div>
+
+
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        // Close all other collapsible contents
+        for (var j = 0; j < coll.length; j++) {
+          if (coll[j] !== this && coll[j].classList.contains("active")) {
+            coll[j].classList.remove("active");
+            var content = coll[j].nextElementSibling;
+            content.style.maxHeight = null;
+          }
+        }
+
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+
+    // Add event listener to copy icon
+    var copyIcons = document.getElementsByClassName("copy-icon");
+    for (var i = 0; i < copyIcons.length; i++) {
+      copyIcons[i].addEventListener("click", function() {
+        var codeBlock = this.parentNode;
+        var code = codeBlock.querySelector("code").textContent;
+        navigator.clipboard.writeText(code).then(function() {
+          console.log("Code copied to clipboard!");
+        });
+      });
+    }
+</script>
+
+</body>
+</html>
